@@ -1,3 +1,43 @@
+export const defaultPrices = {
+  Potato: 35,
+  Cotton: 200,
+  Corn: 133,
+  Wheat: 66,
+  Apple: 200,
+  Carrot: 33,
+  Grape: 118,
+  Blueberry: 30,
+  Cabbage: 93,
+  Pepper: 139,
+  Cherries: 300,
+  Orange: 350,
+  Onion: 200,
+  Strawberry: 50,
+  Beans: 60,
+  Banana: 529,
+  Pumpkin: 433,
+  Watermelon: 530,
+  Pea: 92,
+  Moonberry: 342,
+  Garlic: 770,
+  Acorn: 4000,
+  Brocolli: 2000,
+  Sunberry: 1000,
+};
+
+export const landCapacities = {
+  small: 28,
+  medium: 79,
+  large: 151,
+};
+
+// Capacidades para árvores (que ocupam mais espaço)
+export const treeLandCapacities = {
+  small: 10,
+  medium: 26,
+  large: 48,
+};
+
 export interface Farm {
   name: string;
   image: string;
@@ -8,7 +48,7 @@ export interface Farm {
   harvestTimeHours: number;
   effort: number;
   cost: number;
-  level?: number;
+  level: number;
 }
 
 export const farms: Farm[] = [
@@ -22,9 +62,10 @@ export const farms: Farm[] = [
     harvestTimeHours: 1,
     effort: 2,
     cost: 36,
+    level: 1,
   },
   {
-    name: "Cotton Tree",
+    name: "Cotton",
     image: "cotton.png",
     xp: 1378,
     isTree: true,
@@ -33,6 +74,7 @@ export const farms: Farm[] = [
     harvestTimeHours: 4.5,
     effort: 90,
     cost: 1320,
+    level: 1,
   },
   {
     name: "Corn",
@@ -44,6 +86,7 @@ export const farms: Farm[] = [
     harvestTimeHours: 15,
     effort: 37,
     cost: 564,
+    level: 3,
   },
   {
     name: "Wheat",
@@ -55,9 +98,10 @@ export const farms: Farm[] = [
     harvestTimeHours: 6,
     effort: 15,
     cost: 216,
+    level: 5,
   },
   {
-    name: "Apple Tree",
+    name: "Apple",
     image: "apple.png",
     xp: 2226,
     isTree: true,
@@ -66,6 +110,7 @@ export const farms: Farm[] = [
     harvestTimeHours: 7.5,
     effort: 150,
     cost: 2220,
+    level: 7,
   },
   {
     name: "Carrot",
@@ -77,6 +122,7 @@ export const farms: Farm[] = [
     harvestTimeHours: 2,
     effort: 5,
     cost: 84,
+    level: 10,
   },
   {
     name: "Grape",
@@ -88,6 +134,7 @@ export const farms: Farm[] = [
     minYield: 2,
     maxYield: 4,
     isTree: false,
+    level: 15,
   },
 
   {
@@ -100,6 +147,7 @@ export const farms: Farm[] = [
     harvestTimeHours: 6,
     effort: 15,
     cost: 216,
+    level: 17,
   },
   {
     name: "Cabbage",
@@ -111,6 +159,7 @@ export const farms: Farm[] = [
     harvestTimeHours: 6,
     effort: 15,
     cost: 216,
+    level: 20,
   },
   {
     name: "Pepper",
@@ -122,6 +171,7 @@ export const farms: Farm[] = [
     harvestTimeHours: 28.5,
     effort: 71,
     cost: 1080,
+    level: 21,
   },
   {
     name: "Cherries",
@@ -133,6 +183,7 @@ export const farms: Farm[] = [
     harvestTimeHours: 21,
     effort: 420,
     cost: 6300,
+    level: 21,
   },
   {
     name: "Orange",
@@ -144,6 +195,7 @@ export const farms: Farm[] = [
     harvestTimeHours: 15,
     effort: 300,
     cost: 4500,
+    level: 22,
   },
   {
     name: "Onion",
@@ -155,6 +207,7 @@ export const farms: Farm[] = [
     harvestTimeHours: 9,
     effort: 22,
     cost: 336,
+    level: 25,
   },
   {
     name: "Strawberry",
@@ -166,6 +219,7 @@ export const farms: Farm[] = [
     harvestTimeHours: 7.5,
     effort: 18,
     cost: 288,
+    level: 27,
   },
   {
     name: "Beans",
@@ -177,6 +231,7 @@ export const farms: Farm[] = [
     harvestTimeHours: 15,
     effort: 37,
     cost: 564,
+    level: 30,
   },
   {
     name: "Banana",
@@ -188,6 +243,7 @@ export const farms: Farm[] = [
     harvestTimeHours: 24,
     effort: 480,
     cost: 7200,
+    level: 32,
   },
   {
     name: "Pumpkin",
@@ -199,6 +255,7 @@ export const farms: Farm[] = [
     harvestTimeHours: 24,
     effort: 60,
     cost: 900,
+    level: 35,
   },
   {
     name: "Watermelon",
@@ -210,6 +267,7 @@ export const farms: Farm[] = [
     harvestTimeHours: 30,
     effort: 75,
     cost: 1080,
+    level: 37,
   },
   {
     name: "Pea",
@@ -221,6 +279,7 @@ export const farms: Farm[] = [
     harvestTimeHours: 19.5,
     effort: 48,
     cost: 720,
+    level: 40,
   },
   {
     name: "Moonberry",
@@ -232,6 +291,7 @@ export const farms: Farm[] = [
     harvestTimeHours: 21,
     effort: 52,
     cost: 792,
+    level: 42,
   },
   {
     name: "Garlic",
@@ -243,6 +303,7 @@ export const farms: Farm[] = [
     harvestTimeHours: 16.5,
     effort: 41,
     cost: 600,
+    level: 45,
   },
   {
     name: "Acorn",
@@ -254,6 +315,7 @@ export const farms: Farm[] = [
     harvestTimeHours: 48,
     effort: 960,
     cost: 14400,
+    level: 47,
   },
   {
     name: "Brocolli",
@@ -265,6 +327,7 @@ export const farms: Farm[] = [
     harvestTimeHours: 15,
     effort: 37,
     cost: 564,
+    level: 50,
   },
   {
     name: "Sunberry",
@@ -276,5 +339,6 @@ export const farms: Farm[] = [
     harvestTimeHours: 30,
     effort: 75,
     cost: 1080,
+    level: 52,
   },
 ];
